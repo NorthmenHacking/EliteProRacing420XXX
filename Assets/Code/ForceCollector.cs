@@ -11,10 +11,10 @@ public class ForceCollector : NetworkBehaviour {
 	}
 	
 	[ClientRpc]
-	public void RpcAddForce(Vector3 vec) {
+	public void RpcExplode(float power, Vector3 pos, float dist, float lift) {
 		
-		Debug.Log("Adding force of " + vec + " to " + this.gameObject);
-		this.rb.AddForce(vec);
+		ScreenLog.Log("Added force to " + this + " as LP:" + this.isLocalPlayer);
+		this.rb.AddExplosionForce(power, pos, dist, lift);
 		
 	}
 	
