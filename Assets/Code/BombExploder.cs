@@ -37,13 +37,9 @@ public class BombExploder : NetworkBehaviour {
 			
 			if (hit.attachedRigidbody != null) {
 				
-				Debug.Log("hit " + hit.gameObject);
-				
 				NetworkIdentity ni = hit.GetComponentInParent<NetworkIdentity>();
 				ForceCollector fc = hit.GetComponentInParent<ForceCollector>();
 				if (ni != null && fc != null) {
-					
-					ScreenLog.Log("name:" + hit.name + " ni:" + ni + " fc:" + fc);
 					
 					if (appliedAlready.Contains(fc)) continue;
 					appliedAlready.Add(fc);
