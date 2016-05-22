@@ -14,11 +14,6 @@ public class PlayerScriptEnabler : MonoBehaviour {
 		this.GetComponent<CarUserControl>().enabled = state;
 		this.GetComponent<CarAudio>().enabled = state;
 		
-		Camera cam = this.GetComponentInChildren<Camera>();
-		cam.enabled = state;
-		cam.gameObject.GetComponent<AudioListener>().enabled = state;
-		if (state) Camera.SetupCurrent(cam);
-		
 	}
 	
 }
